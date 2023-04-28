@@ -69,3 +69,11 @@ a {
     top: -1.5em;
 }
 
+.weather-temperature .active {
+    color: #212121;
+    cursor: default;
+    }
+
+ .weather-temperature .active:hover {
+            text-decoration: none;
+}
