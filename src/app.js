@@ -43,10 +43,24 @@ function displayTemperature(response){
 
 }
 
-
+function search(city){
 let apiKey = "57b2c40fdae71a6ba41d72685e3226e2";
-let city = "Sydney";
 let units = "metric";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
 axios.get(apiUrl).then(displayTemperature);
+
+};
+
+function handleSubmit(event){
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+
+}
+
+search("New York");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
